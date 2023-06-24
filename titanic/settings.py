@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7y_y8b1%s8#ru*#!4&9#btq%9a!+8!&3s@3nqgq#^de@3)yvdr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*.titanic-project.co',.vercel.app']
+ALLOWED_HOSTS = ['titanic-project.co',.vercel.app']
 
 
 # Application definition
