@@ -4,8 +4,7 @@ import pickle
 import os
 
 def home(request):
-    filename = os.path.abspath('titanic/model.pkl')
-    model = pickle.load(open(filename, 'rb'))
+    model = pickle.load(open('model.pkl', 'rb'))
     percent = 0
     if (request.method == 'POST'):
         pclass = request.POST['pclass']
