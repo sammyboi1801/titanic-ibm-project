@@ -2,9 +2,7 @@ asgiref==3.7.2
 astunparse==1.6.3
 cachetools==5.3.1
 certifi==2023.5.7
-charset-normalizer==3.1.0
 Django==4.2.2
-grpcio==1.54.2
 idna==3.4
 jax==0.4.12
 libclang==16.0.0
@@ -26,7 +24,4 @@ scipy==1.10.1
 six==1.16.0
 sqlparse==0.4.4
 tzdata==2023.3
-urllib3==1.26.16
 Werkzeug==2.3.6
-wrapt==1.14.1
-zipp==3.15.0
