@@ -1,11 +1,8 @@
 import numpy as np
 from django.shortcuts import render
-import tensorflow as tf
-from keras.models import load_model
 import pickle
 
 def home(request):
-    # model = load_model('C:\\Users\\sammyboi1801\\PycharmProjects\\titanic_dashboard\\titanic\\titanic\\titanic_model.h5')
     filename = 'C:\\Users\\sammyboi1801\\PycharmProjects\\titanic_dashboard\\titanic\\titanic\\model.pkl'
     model = pickle.load(open(filename, 'rb'))
     percent = 0
