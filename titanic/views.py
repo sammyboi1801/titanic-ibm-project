@@ -1,9 +1,10 @@
 import numpy as np
 from django.shortcuts import render
 import pickle
+import os
 
 def home(request):
-    filename = 'C:\\Users\\sammyboi1801\\PycharmProjects\\titanic_dashboard\\titanic\\titanic\\model.pkl'
+    filename = os.path.abspath('titanic/model.pkl')
     model = pickle.load(open(filename, 'rb'))
     percent = 0
     if (request.method == 'POST'):
