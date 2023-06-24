@@ -1,0 +1,31 @@
+import numpy as np
+from django.shortcuts import render
+import tensorflow as tf
+from keras.models import load_model
+import pickle
+
+def home(request):
+    # model = load_model('C:\\Users\\sammyboi1801\\PycharmProjects\\titanic_dashboard\\titanic\\titanic\\titanic_model.h5')
+    filename = 'C:\\Users\\sammyboi1801\\PycharmProjects\\titanic_dashboard\\titanic\\titanic\\model.pkl'
+    model = pickle.load(open(filename, 'rb'))
+    percent = 0
+    if (request.method == 'POST'):
+        pclass = request.POST['pclass']
+        sex = request.POST['sex']
+        age = request.POST['age']
+        sibsp = request.POST['sibsp']
+        parch = request.POST['parch']
+        fare = request.POST['fare']
+        embarked = request.POST['embarked']
+        print(pclass,sex,age,sibsp,parch,fare,embarked)
+        try:
+            percent = model.predict_proba(np.array([[pclass,sex,age,sibsp,parch,fare,embarked]]))[0][1]
+        except:
+            percent = "Enter appropriate values"
+    print("answer:",percent)
+    if type(percent)==str:
+        return render(request,"home.html",{'survival_rate':percent})
+    else:
+        return render(request, "home.html", {'survival_rate': str(percent*100)+'%'})
+
+
